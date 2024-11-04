@@ -1,0 +1,84 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Contenedor de la tabla */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #444;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo de botones */
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Formularios dentro de la tabla */
+form {
+    display: inline-block;
+}
+
+/* Estilo de filas alternas */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+button.eliminar {
+    background-color: #dc3545; 
+}
+
+button.eliminar:hover {
+    background-color: #c82333;
+}

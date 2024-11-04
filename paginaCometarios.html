@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Detalle - Toyota AE86 Trueno</title>
+    <link rel="stylesheet" href="CSS/paginaComentarios.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Project D</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="principal.html">Cars</a></li>
+                <li><a href="index.html">Log Out</a></li>
+                <li><a href="PHP/paginaAdmin.php">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="car-details" style="display: flex;">
+        <h2 style="position: absolute;">Toyota AE86 Trueno</h2>
+        <img src="img/Group 9.png" alt="Toyota AE86 Trueno" style="width: 700px; display: flex;" />
+        <div style="position: relative; top: 15vh;">
+        <p>El Toyota AE86 Trueno es un automóvil de culto que ha ganado popularidad en la cultura de las carreras callejeras y de drift. Equipado con un motor 4A-GE de 1.6 litros, este coche de tracción trasera es conocido por su equilibrio en las curvas y su capacidad de maniobra, haciéndolo el favorito entre los conductores de carreras en montaña.</p>
+        <h3>Curiosidades</h3>
+        <ul>
+            <li>El AE86 es famoso gracias al anime "Initial D".</li>
+            <li>Fue fabricado entre 1983 y 1987 por Toyota.</li>
+            <li>A pesar de no tener gran potencia, es amado por su maniobrabilidad.</li></div>
+        </ul>
+    </section>
+
+    <section class="comments">
+        <h3> Ver Comentarios</h3>
+        
+        <div class="comment">
+            <p><strong>Juan:</strong> ¡Este auto es increíble! El manejo es legendario.</p>
+        </div>
+
+        <div class="comment">
+            <p><strong>Lucía:</strong> El AE86 cambió el mundo del drift para siempre.</p>
+        </div>
+
+        <h4>Añadir un comentario</h4>
+        <form action="PHP/paginaComentarios.php" method="POST">
+            <textarea name="comentario" rows="5" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <button type="submit">Publicar comentario</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Project D. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

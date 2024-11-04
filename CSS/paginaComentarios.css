@@ -1,0 +1,155 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Sección de detalles del auto */
+.car-details {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.car-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.car-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.car-details p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.car-details ul {
+    list-style-type: disc;
+    margin: 20px auto;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.car-details ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Sección de comentarios */
+.comments {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.comments h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+    font-size: 16px;
+    color: #333;
+}
+
+h4 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #575757;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+    top: 24px;
+    position: relative;
+}

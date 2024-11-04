@@ -1,0 +1,107 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: #ebebeb ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Título principal del sitio */
+h2 {
+    margin-bottom: 40px;
+    color: #070101;
+    font-size: 80px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Contenedor principal del formulario de registro */
+.register-container {
+    background-color: #1b1a1a ;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    /*height: 80vh;*/
+    text-align: center;
+}
+
+/* Estilo grupos de formulario */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Estilo labels de los inputs */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color:  #7c7b7b ;
+    margin-bottom: 5px;
+}
+
+/* Estilo inputs */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    border: 1px solid #007bff;
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3d4c35 ;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+    background-color: #75af57 ;
+}
+
+/* Estilo párrafo de login */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+p a {
+    color:  #7c7b7b ;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        width: 90%;
+    }
+}

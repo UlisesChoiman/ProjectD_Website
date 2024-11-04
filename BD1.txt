@@ -1,0 +1,212 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-10-2024 a las 15:57:58
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*utf8mb4*/
+--
+-- Base de datos: `project_d`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `autos`
+--
+
+CREATE TABLE `autos` (
+  `ID_autos` int(11) NOT NULL,
+  `Color` text NOT NULL,
+  `Info` text NOT NULL,
+  `ID_categorias` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `autos`
+--
+
+INSERT INTO `autos` (`ID_autos`, `Color`, `Info`, `ID_categorias`) VALUES
+(1, 'rojo', 'muy bonito', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cargos`
+--
+
+CREATE TABLE `cargos` (
+  `ID_cargo` int(11) NOT NULL,
+  `Cargo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cargos`
+--
+
+INSERT INTO `cargos` (`ID_cargo`, `Cargo`) VALUES
+(1, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `ID_categorias` int(11) NOT NULL,
+  `Marca` text NOT NULL,
+  `Modelo` text NOT NULL,
+  `KM` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`ID_categorias`, `Marca`, `Modelo`, `KM`) VALUES
+(1, 'toyota', '2016', '0KM');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `ID_comentario` int(11) NOT NULL,
+  `post` text NOT NULL,
+  `ID_usuario` int(11) NOT NULL,
+  `ID_autos` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `ID_usuario` int(11) NOT NULL,
+  `Nombre` varchar(25) NOT NULL,
+  `Apellido` varchar(25) NOT NULL,
+  `Telefono` int(25) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Clave` int(255) NOT NULL,
+  `ID_cargo` int(11) NOT NULL,
+  `ID_autos` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID_usuario`, `Nombre`, `Apellido`, `Telefono`, `Email`, `Clave`, `ID_cargo`, `ID_autos`) VALUES
+(1, 'uli', 'choi', 299565656, 'uli@gmail.com', 0, 1, 1);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `autos`
+--
+ALTER TABLE `autos`
+  ADD PRIMARY KEY (`ID_autos`),
+  ADD KEY `ID_categorias` (`ID_categorias`);
+
+--
+-- Indices de la tabla `cargos`
+--
+ALTER TABLE `cargos`
+  ADD PRIMARY KEY (`ID_cargo`);
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`ID_categorias`);
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`ID_comentario`),
+  ADD KEY `ID_usuario` (`ID_usuario`),
+  ADD KEY `ID_autos` (`ID_autos`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`ID_usuario`),
+  ADD KEY `ID_cargo` (`ID_cargo`),
+  ADD KEY `ID_autos` (`ID_autos`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `autos`
+--
+ALTER TABLE `autos`
+  MODIFY `ID_autos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `cargos`
+--
+ALTER TABLE `cargos`
+  MODIFY `ID_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `ID_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `ID_comentario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `ID_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `autos`
+--
+ALTER TABLE `autos`
+  ADD CONSTRAINT `autos_ibfk_1` FOREIGN KEY (`ID_categorias`) REFERENCES `categorias` (`ID_categorias`);
+
+--
+-- Filtros para la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`ID_usuario`) REFERENCES `usuarios` (`ID_usuario`),
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`ID_autos`) REFERENCES `autos` (`ID_autos`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`ID_cargo`) REFERENCES `cargos` (`ID_cargo`),
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`ID_autos`) REFERENCES `autos` (`ID_autos`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

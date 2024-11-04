@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/*background-color: #8f7a6c;*/
+body {
+    background-color: #8f7a6c;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.navbar {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Introducción */
+.intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.intro h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    padding-bottom: 8%;
+    color: #130303;
+}
+
+/* Contenedor de autos */
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Cartas de autos */
+.car-card {
+    background-color: #fff;
+    width: 300px;
+    height: 370px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 3%;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Imagen del auto */
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Detalles del auto */
+.car-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.car-details h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.car-details p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 96vw;
+    height: 30vh;
+}
+
+h3{
+    margin: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #f4f4f4;
+}
+
+.imagen{
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .car-details {
+        width: 90%;
+    }
+}
