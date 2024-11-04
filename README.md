@@ -1,3 +1,1 @@
-Bienvenidos a Project D: Website
-Programado por UlisesChoiman
-Diseñado por Agusvi18
+Bienvenidos a Project D: Website          Programado por UlisesChoiman      Diseñado por Agusvi18
